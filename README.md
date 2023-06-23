@@ -24,7 +24,7 @@ The directory in which the project is included, displayed in VSCode:
    
 **3.** Make sure the Jetson Inference Library is installed on your Jetson Nano, as it includes the networks (imagenet, resnet-18) required to run this program.
    
-**4.** cd into jetson-inference/python/training/classification. Place the data and model folders here, or add the files within them into existing data and model directories inside the classification directory. Make sure that the file resnet18.onnx is included within the models folder.
+**4.** cd into jetson-inference/python/training/classification. Place the data and model folders here, or add the files within them into existing data and model directories inside the classification directory. Make sure that the file resnet18.onnx is included within the models folder. Alternatively, you can put the files into their own directory outside of jetson-inference if you do not wish to further train or add data to the model.
 
    In VSCode, you should have something similar to the image below (the cat_dog model is from an unrelated project):
  
