@@ -45,4 +45,7 @@ Replace (INPUT) with a chosen file from inside the test folder and replace (OUTP
  
 ** **
 
-[View a video example here]
+#Video Demonstration
+
+View a video demonstration at the link below
+https://youtu.be/Ua-t79bmobo
