@@ -24,23 +24,25 @@ The directory in which the project is included, displayed in VSCode:
    
 **3.** Make sure the Jetson Inference Library is installed on your Jetson Nano, as it includes the networks (imagenet, resnet-18) required to run this program.
    
-**4.** cd into jetson-inference/python/training/classification. Place the data and model folders here, or add the files within them into existing data and model directories inside the classification directory. Make sure that the file resnet18.onnx is included within the models folder. Alternatively, you can put the files into their own directory outside of jetson-inference if you do not wish to further train or add data to the model.
+**4.** Create a new directory and name it something related to the project. I named my directory "snakesproject", so replace any future instances of "snakesproject" in these instructions with the name you chose for your directory. Place the data and model folders here and sure that the file resnet18.onnx is inside the model folder.
 
-   In VSCode, you should have something similar to the image below (the cat_dog model is from an unrelated project):
+   In VSCode, you should have something similar to the image below:
  
-![image](https://github.com/Justin0770/Snakes-AI-Project-/assets/136377327/7672f2fd-958b-4e13-ab1a-eefc30eeec75)
+![image](https://github.com/Justin0770/Snakes-AI-Project-/assets/136377327/c2cb5a36-f597-44c7-8438-15eb1a0c3fc5)
 
-**5.** Run the model inside the jetson-inference/python/training/classification directory using the following command:
+**5.** Within snakesproject, set NET=model and DATASET=data inside of the Linux terminal.
 
-*imagenet.py --model=models/snakes/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=data/labels.txt data/test/(Venomous or Nonvenomous)/(INPUT).jpg data/test-results/(OUTPUT).jpg*
+**6.** Run the model inside the jetson-inference/python/training/classification directory using the following command:
+
+*imagenet.py --model=$NET/resnet18.onnx --input_blob=input_0 --output_blob=output_0 --labels=$DATASET/labels.txt $DATASET/test/(Venomous or Nonvenomous)/(INPUT).jpg $DATASET/test-results/(OUTPUT).jpg*
 
 Replace (INPUT) with a chosen file from inside the test folder and replace (OUTPUT) with what you would like the resulting output file to be called. If your directories are organized differently than mine, you may want to make alterations to the command to match what you have.
 
 
-**6.** Check inside the test-results directory, where you should find the result of the model. An example is shown below:
+**7.** Check inside the test-results directory, where you should find the result of the model. An example is shown below:
 
-![image](https://github.com/Justin0770/Snakes-AI-Project-/assets/136377327/2f0087f2-2f04-4f5a-a640-b679e7b11d49)
-
+![image](https://github.com/Justin0770/Snakes-AI-Project-/assets/136377327/b4107b66-ff90-4c79-90de-58315b377e10)
+ 
 ** **
 
 [View a video example here]
